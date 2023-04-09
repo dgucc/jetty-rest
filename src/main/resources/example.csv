@@ -1,1 +1,4 @@
-source,sourceLabel,target,targetLabel,linkLabel
+A,Node A,B,Node B,A -> B
+A,Node A,C,Node C,A -> C
+B,Node B,D,Node D,B -> D
+B,Node B,E,Node E,B -> E

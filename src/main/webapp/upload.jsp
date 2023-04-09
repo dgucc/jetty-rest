@@ -6,24 +6,25 @@
     <link type="text/css" rel="stylesheet" href="./css/style.css"></link>
     <script src="./js/d3.v5.min.js"></script>
     <script src="./js/jquery-latest.min.js"></script>
+	 <title>D3js Force Directed Graph</title>
 </head>
 <body>
 
-<h1>D3js Force Directed Graph</h1>
-
 <div id="tips">
-<span style="text-decoration: underline;">CSV :</span><br/>
-Expected fields in this order :</b><br/> 
-- <b>source</b>,<b>sourceLabel</b><br/>
-- <b>target</b>,<b>targetLabel</b><br/>
-- <b>linkLabel</b><br/>
+<span style="text-decoration: underline;">
+	CSV - Expected fields in this order :
+</span>
+	<li>
+		<b>source</b>,sourceLabel,<b>target</b>,targetLabel,linkLabel
+	</li>
+Ensure using Unix line endings : <b>"\n"</b>...
 </div>
 
 <div>
  <form id="form" enctype="multipart/form-data" class="form-control-sm" >
-    <span style="font-size:1.0em">Upload csv file : </span>&nbsp;
+    <span style="font-size:1.1em;font-weight: bold;">Upload csv file : </span>&nbsp;
     <input name="file" id="file" class="btn btn-outline-secondary" type="file" accept=".csv" />&nbsp;
-	<input type="button" id="btnUpload" value="Load" class="btn btn-primary"/>
+	<input type="button" id="btnUpload" value="Load Graph" class="btn btn-primary"/>
 </form>
 </div>
 
@@ -50,16 +51,16 @@ function upload(){
         processData:false,
         contentType:false,
         success:function(response){
-            data = [];
-            Array.from(response.split("\n")).forEach(function(d,i){
-	            let col = d.split(",")
-	            if(col[0] != "source" && col[0] != "") { // skip headers and lines with no source
+            let data = [];
+            Array.from(response.split("\n")).forEach(function(row,i){
+	            let cols = row.split(",")
+	            if(cols[0] != "source" && cols[0] != "") { // skip headers and lines with no source
 		            data.push({
-		                source:col[0]
-		                ,sourceLabel:col[1] != "" ? col[1].normalize('NFD').replace(/[\u0300-\u036f]/g, "") : ""
-		                ,target:col[2]
-		                ,targetLabel:col[3] != "" ? col[3].normalize('NFD').replace(/[\u0300-\u036f]/g, "") : ""
-		                ,linkLabel:col[4] != "" ? col[4].normalize('NFD').replace(/[\u0300-\u036f]/g, "") : ""
+		                source:cols[0]
+		                ,sourceLabel:cols[1] != "" ? cols[1].normalize('NFD').replace(/[\u0300-\u036f]/g, "") : ""
+		                ,target:cols[2]
+		                ,targetLabel:cols[3] != "" ? cols[3].normalize('NFD').replace(/[\u0300-\u036f]/g, "") : ""
+		                ,linkLabel:cols[4] != "" ? cols[4].normalize('NFD').replace(/[\u0300-\u036f]/g, "") : ""
 		            });
 	            }
             })            
