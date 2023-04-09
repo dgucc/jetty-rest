@@ -267,7 +267,8 @@ function chart(groupMembers){
 	    node.append("text")
 		    .attr("dy", +10)
 		    .attr("text-anchor", "middle")
-		    .attr("font-size", "9px")
+		    .attr("font-size", "8px")
+			 .attr("font-weight","bold")
 			.attr("color", "lightgreay")
 		    .text(function (d) {
 		    	let name = "";

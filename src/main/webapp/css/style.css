@@ -1,7 +1,6 @@
 body {
 	font-family:sans-serif;
-	margin: 5px;
-	background-color:lightgray;
+	margin: 5px;	
 }
 h1 {
 	font-size:1.2em;
@@ -28,7 +27,7 @@ label:hover {
 	text-decoration: underline;
 }
 #chart {
-	background-color: rgb(78, 78, 80);
+	background-color: rgb(84, 84, 87);
 	overflow-x: scroll;
 	overflow-y: scroll;
 	position: relative;
