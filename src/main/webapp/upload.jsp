@@ -14,18 +14,20 @@
 <span style="text-decoration: underline;">
 	CSV - Expected fields in this order :
 </span>
-	<li>
-		<b>source</b>,sourceLabel,<b>target</b>,targetLabel,linkLabel
-	</li>
+<li>
+	<b>source</b>,sourceLabel,<b>target</b>,targetLabel,linkLabel
+</li>
 Ensure using Unix line endings : <b>"\n"</b>...
 </div>
 
-<div>
- <form id="form" enctype="multipart/form-data" class="form-control-sm" >
-    <span style="font-size:1.1em;font-weight: bold;">Upload csv file : </span>&nbsp;
-    <input name="file" id="file" class="btn btn-outline-secondary" type="file" accept=".csv" />&nbsp;
-	<input type="button" id="btnUpload" value="Load Graph" class="btn btn-primary"/>
-</form>
+<div style="display: flex; flex-direction: row; flex-wrap: nowrap;align-items: center;">
+	<div class="upload-container">
+	 <form id="form" enctype="multipart/form-data" class="form-control-sm" >
+		 <span style="font-size:1.1em;font-weight: bold;">Upload csv file : </span>&nbsp;
+		 <input name="file" id="file" class="btn btn-outline-secondary" type="file" accept=".csv" multiple="false"/>&nbsp;
+		</form>
+	</div>
+	<input type="button" id="btnUpload" value="Load Graph" class="btn btn-primary " style="margin-left: 15px; height:42px; "/>
 </div>
 
 <div id="chart" style="">

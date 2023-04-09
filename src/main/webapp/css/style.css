@@ -76,3 +76,30 @@ div.tooltip {
 	font: 11px sans-serif;
 	padding:5px;
 }
+
+.upload-container {
+	position: relative;
+}
+.upload-container input {
+	border: 1px solid #92b0b3;
+	background: #f1f1f1;
+	outline: 2px dashed #92b0b3;
+	outline-offset: -10px;
+	/* padding: top right bottom left */
+	padding: 20px 30px 40px 15px; 
+	text-align: left !important;
+	width: 300px;
+}
+
+.upload-container input:hover {
+	background: #ddd;
+}
+
+.upload-container:before {
+	position: absolute;
+	bottom: 30px;
+	left: 165px;
+	content: " (or) Drag and Drop file here. ";
+	color: #3f8188;
+	font-weight: 900;
+}
